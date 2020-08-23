@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+/*import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -9,6 +9,12 @@ export class UsuarioService {
   constructor(private http: HttpClient) { }
 
   getUsuario(){
-    return this.http.get("https://jsonplaceholder.typicode.com/users/1");
+    return this.http.get('https://jsonplaceholder.typicode.com/users/1');
   }
+
+  postUsuario(dados){
+    return this.http.post('https://jsonplaceholder.typicode.com/users/', dados);
+  }
+
 }
+*/
