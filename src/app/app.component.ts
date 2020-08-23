@@ -17,7 +17,11 @@ export class AppComponent {
 
    endereco: any = {};
 
+   tem_endereco: boolean = false;
+
   constructor(private endServ: EnderecoService) {
+
+    this.tem_endereco = false;
 
   }
   
@@ -34,15 +38,24 @@ export class AppComponent {
     this.endServ.getEndereco(formulario.form.value.zipcode).subscribe(endereco => {
       
       this.endereco = endereco;
+      
+      this.tem_endereco = true;
 
       console.log(this.endereco);
   
     });
   
-  
-  
+
+    
   } 
   
+  limpar(){
+
+    this.endereco = { };
+    this.tem_endereco = false;
+    
+  }
+ 
   
 }
   
