@@ -35,7 +35,10 @@ export class AppComponent {
     
     }
 
-    this.endServ.getEndereco(formulario.form.value.zipcode).subscribe(endereco => {
+    let zipcode = formulario.form.value.zipcode.replace('_','');
+
+    this.endServ.getEndereco(formulario.form.value.zipcode)
+    .subscribe(endereco => {
       
       this.endereco = endereco;
       
@@ -43,7 +46,8 @@ export class AppComponent {
 
       console.log(this.endereco);
   
-    });
+    },
+      () => alert("CEP incorreto, por favor corrija / Exemplo 12345678"));
   
 
     
