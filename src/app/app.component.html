@@ -106,15 +106,37 @@
 <div class="content" role="main">
 
   <div class="login-box">
+
     <h2>Login</h2>
-    <form>
+
+    <form #nossoForm="ngForm" (ngSubmit)="onSubmit(nossoForm)">
+
       <div class="user-box">
-        <input type="text" name="" required="">
-        <label>Email</label>
+
+        <input type="text" name="name" required [(ngModel)]="usuario.name">
+        <label>Nome</label>
+
       </div>
+      
       <div class="user-box">
-        <input type="password" name="" required="">
-        <label>Senha</label>
+
+        <input type="text" name="email" required [(ngModel)]="usuario.email">
+        <label>Email</label>
+
+      </div>
+
+      <div class="user-box">
+
+        <input type="text" name="phone" required [(ngModel)]="usuario.phone">
+        <label>Telefone</label>
+
+      </div>
+
+      <div class="user-box">
+
+        <input type="text" name="website" required [(ngModel)]="usuario.website">
+        <label>Website</label>
+
       </div>
       
       <button type="submit">
@@ -124,7 +146,10 @@
         <span></span>Submit
       </button>
     </form>
+
   </div>
+  
+  
   <br>
   <br>
   <div class="content" role="main">
